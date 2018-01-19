@@ -1,0 +1,31 @@
+---
+basic_packages_redhat:
+  - git
+  - curl
+  - libselinux-python
+  - yum-utils
+  - mlocate
+  - htop
+  - iotop
+  - make
+  - multitail
+  - ncdu
+  - nload
+  - pv
+  - tree
+  - unzip
+  
+basic_packages_ubuntu:
+  - git
+  - curl
+  - mcrypt
+  - htop
+  - iotop
+  - make
+  - multitail
+  - ncdu
+  - nload
+  - nmon
+  - pv
+  - tree
+  - unzip
