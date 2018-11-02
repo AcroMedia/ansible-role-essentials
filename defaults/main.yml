@@ -14,7 +14,8 @@ basic_packages_redhat:
   - pv
   - tree
   - unzip
-  
+  - bc
+
 basic_packages_ubuntu:
   - git
   - curl
@@ -29,3 +30,4 @@ basic_packages_ubuntu:
   - pv
   - tree
   - unzip
+  - bc

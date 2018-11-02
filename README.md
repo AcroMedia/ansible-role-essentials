@@ -1,7 +1,7 @@
 basic-packages
 ======
 
-For installing basic packages on every server.
+For packages commonly required on every server.
 
 
 Requirements
