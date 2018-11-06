@@ -1,36 +1,31 @@
-basic-packages
-======
+# basic-packages
 
 For packages commonly required on every server.
 
 
-Requirements
-------------
-* Redhat or Ubuntu
+## Requirements
 
-Role Variables
---------------
+* Red Hat or Ubuntu
+
+## Role Variables
+
 * None
 
-Dependencies
-------------
+## Dependencies
 
 None
 
-Example Playbook
-----------------
+## Example Playbook
 
     - hosts: servers
       roles:
-         - { role: acromedia.basic-packages }
+         - { role: acromedia.essentials }
 
-License
--------
+## License
 
-BSD
+AGPLv3
 
-Author Information
-------------------
+## Author Information
 
 Acro Media Inc.
 https://www.acromedia.com/
