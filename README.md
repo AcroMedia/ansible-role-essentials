@@ -1,7 +1,6 @@
-# basic-packages
+# essentials
 
-For packages commonly required on every server.
-
+Install utilities commonly needed by sysadmins and developers
 
 ## Requirements
 
