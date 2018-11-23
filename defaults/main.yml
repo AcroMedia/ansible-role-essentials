@@ -31,3 +31,5 @@ basic_packages_ubuntu:
   - tree
   - unzip
   - bc
+
+set_bash_history_timestamps: true

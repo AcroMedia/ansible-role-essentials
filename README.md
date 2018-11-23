@@ -8,7 +8,17 @@ Install utilities commonly needed by sysadmins and developers
 
 ## Role Variables
 
-* None
+* basic_packages_redhat (list)
+
+  A list of packgaes to install on Red Hat / CentOS boxes. See defaults/main.yml.
+
+* basic_packages_ubuntu (list)
+
+  A list of packgaes to install on Ubuntu boxes. See defaults/main.yml.
+
+* set_bash_history_timestamps (boolean)
+
+  Not a package; just a tweak for bash shells that we find useful.
 
 ## Dependencies
 
