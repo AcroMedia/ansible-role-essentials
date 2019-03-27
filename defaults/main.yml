@@ -15,6 +15,7 @@ basic_packages_redhat:
   - tree
   - unzip
   - bc
+  - screen
 
 basic_packages_ubuntu:
   - git
@@ -31,5 +32,6 @@ basic_packages_ubuntu:
   - tree
   - unzip
   - bc
+  - screen
 
 set_bash_history_timestamps: true
