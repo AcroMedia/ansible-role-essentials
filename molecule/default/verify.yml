@@ -1,13 +1,53 @@
 ---
-- name: Check whether rsyslog is configured to send data to the Alert Logic agent
+- name: Check whether packages are installed
   hosts: all
   become: yes
 
   tasks:
-    - name: Check whether rsyslog is configured to send data to the Alert Logic agent
-      shell: grep -Fxq "*.* @@127.0.0.1:1514;RSYSLOG_FileFormat" /etc/rsyslog.d/alert-logic-agent.conf
+    - name: Gather package facts
+      package_facts:
+        manager: auto
 
-    - name: Check whether Alert Logic agent is running
-      shell: pgrep -f /var/alertlogic/lib/agent/bin/al-agent
+    - name: Verify Packages
+      assert:
+        that: "'{{ item }}' in ansible_facts.packages"
+      with_items:
+        - git
+        - curl
+        - mcrypt
+        - htop
+        - iotop
+        - make
+        - multitail
+        - ncdu
+        - nload
+        - nmon
+        - pv
+        - tree
+        - unzip
+        - bc
+        - screen
+      when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+
+    - name: Verify Packages
+      assert:
+        that: "'{{ item }}' in ansible_facts.packages"
+      with_items:
+        - git
+        - curl
+        - mcrypt
+        - htop
+        - iotop
+        - make
+        - multitail
+        - ncdu
+        - nload
+        - nmon
+        - pv
+        - tree
+        - unzip
+        - bc
+        - screen
+      when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
 
 
