@@ -35,14 +35,15 @@
       with_items:
         - git
         - curl
-        - mcrypt
+        - libselinux-python3
+        - yum-utils
+        - mlocate
         - htop
         - iotop
         - make
         - multitail
         - ncdu
         - nload
-        - nmon
         - pv
         - tree
         - unzip
