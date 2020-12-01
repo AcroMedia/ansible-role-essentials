@@ -4,51 +4,24 @@
   become: yes
 
   tasks:
-    - name: Gather package facts
-      package_facts:
-        manager: auto
 
-    - name: Verify Packages
-      assert:
-        that: "'{{ item }}' in ansible_facts.packages"
+    - name: Verify utilities are available
+      command: >
+        {{ item }}
+        with_items:
       with_items:
-        - git
-        - curl
-        - mcrypt
-        - htop
-        - iotop
-        - make
-        - multitail
-        - ncdu
-        - nload
-        - nmon
-        - pv
-        - tree
-        - unzip
-        - bc
-        - screen
-      when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
-
-    - name: Verify Packages
-      assert:
-        that: "'{{ item }}' in ansible_facts.packages"
-      with_items:
-        - git
-        - curl
-        - libselinux-python3
-        - yum-utils
-        - mlocate
-        - htop
-        - iotop
-        - make
-        - multitail
-        - ncdu
-        - nload
-        - pv
-        - tree
-        - unzip
-        - bc
-        - screen
-      when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
+        - git --version
+        - curl --version
+        - htop --version
+        - iotop --version
+        - make --version
+        - multitail -h
+        - ncdu -v
+        - nload --help
+        - pv --version
+        - tree --version
+        - unzip --help
+        - bc --version
+        - screen --version
 
 
