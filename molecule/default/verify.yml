@@ -15,13 +15,13 @@
         - htop --version
         - iotop --version
         - make --version
-        - multitail -h
+        - multitail -V
         - ncdu -v
         - nload --help
         - pv --version
         - tree --version
         - unzip --help
         - bc --version
-        - screen --version
+        - screen -d -m true
 
 
