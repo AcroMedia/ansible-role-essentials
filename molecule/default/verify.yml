@@ -15,7 +15,6 @@
         - htop --version
         - iotop --version
         - make --version
-        - multitail -V
         - ncdu -v
         - nload --help
         - pv --version
@@ -24,4 +23,10 @@
         - bc --version
         - screen -d -m true
 
+
+    - name: Verify multitail is installed
+      shell:
+        cmd : multitail -V
+      environment:
+        LINES=23 COLUMNS=78
 
