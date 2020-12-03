@@ -24,13 +24,13 @@
         - screen -d -m true
 
 
-    - name: Verify multitail is installed
+    - name: Gather list of installed packages
       package_facts:
         manager: "auto"
 
-    - name: "multitail test result"
-      debug:
-        msg: "multitail found"
-      when: "'multitail' in ansible_facts.packages"
+    - name: Verify multitail is present
+      assert:
+        that: 
+          - "'multitail' in ansible_facts.packages"
 
 
