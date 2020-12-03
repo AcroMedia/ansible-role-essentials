@@ -25,8 +25,12 @@
 
 
     - name: Verify multitail is installed
-      shell:
-        cmd : multitail -V
-      environment:
-        LINES=23 COLUMNS=78
+      package_facts:
+        manager: "auto"
+
+    - name: "multitail test result"
+      debug:
+        msg: "multitail found"
+      when: "'multitail' in ansible_facts.packages"
+
 
