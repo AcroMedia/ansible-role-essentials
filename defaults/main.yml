@@ -21,7 +21,6 @@ basic_packages_redhat:
 basic_packages_ubuntu:
   - git
   - curl
-  - mcrypt
   - htop
   - iotop
   - make
