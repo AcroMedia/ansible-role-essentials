@@ -1,11 +1,6 @@
 ---
-- name: Include Ubuntu tasks
-  include_tasks: "ubuntu.yml"
-  when: ansible_os_family == 'Debian'
-
-- name: Include Redhat tasks
-  include_tasks: "redhat.yml"
-  when: ansible_os_family == 'RedHat'
+- name: Install packages
+  include_tasks: "{{ ansible_os_family }}.yml"
 
 - name: Make sure bash history records and displays timestamps by default
   # Tested on Red Hat + Ubuntu
