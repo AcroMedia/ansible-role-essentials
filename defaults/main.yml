@@ -17,6 +17,7 @@ basic_packages_redhat:
   - bc
   - screen
   - jq
+  - net-tools
 
 basic_packages_ubuntu:
   - git
@@ -34,5 +35,7 @@ basic_packages_ubuntu:
   - bc
   - screen
   - jq
+  - mlocate
+  - net-tools
 
 set_bash_history_timestamps: true
