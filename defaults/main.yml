@@ -9,7 +9,6 @@ essential_packages_ubuntu_only:
 essential_packages_common:
   - git
   - curl
-  - mlocate
   - htop
   - iotop
   - make
@@ -22,6 +21,7 @@ essential_packages_common:
   - bc
   - screen
   - jq
+  - mlocate
   - net-tools
 
 basic_packages_redhat: "{{ essential_packages_common + essential_packages_redhat_only }}"
