@@ -1,4 +1,11 @@
 ---
+essential_packages_redhat_only:
+  - libselinux-python3
+  - yum-utils
+
+essential_packages_debian_only:
+  - nmon
+
 essential_packages_common:
   - git
   - curl
@@ -16,13 +23,6 @@ essential_packages_common:
   - screen
   - jq
   - net-tools
-
-essential_packages_redhat_only:
-  - libselinux-python3
-  - yum-utils
-
-essential_packages_debian_only:
-  - nmon
 
 basic_packages_redhat: "{{ essential_packages_common + essential_packages_redhat_only }}"
 
