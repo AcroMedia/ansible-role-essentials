@@ -1,25 +1,12 @@
 ---
-basic_packages_redhat:
-  - git
-  - curl
+essential_packages_redhat_only:
   - libselinux-python3
   - yum-utils
-  - mlocate
-  - htop
-  - iotop
-  - make
-  - multitail
-  - ncdu
-  - nload
-  - pv
-  - tree
-  - unzip
-  - bc
-  - screen
-  - jq
-  - net-tools
 
-basic_packages_ubuntu:
+essential_packages_ubuntu_only:
+  - nmon
+
+essential_packages_common:
   - git
   - curl
   - htop
@@ -28,7 +15,6 @@ basic_packages_ubuntu:
   - multitail
   - ncdu
   - nload
-  - nmon
   - pv
   - tree
   - unzip
@@ -37,5 +23,9 @@ basic_packages_ubuntu:
   - jq
   - mlocate
   - net-tools
+
+basic_packages_redhat: "{{ essential_packages_common + essential_packages_redhat_only }}"
+
+basic_packages_ubuntu: "{{ essential_packages_common + essential_packages_ubuntu_only }}"
 
 set_bash_history_timestamps: true
