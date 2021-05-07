@@ -3,7 +3,7 @@ essential_packages_redhat_only:
   - libselinux-python3
   - yum-utils
 
-essential_packages_debian_only:
+essential_packages_ubuntu_only:
   - nmon
 
 essential_packages_common:
@@ -26,6 +26,6 @@ essential_packages_common:
 
 basic_packages_redhat: "{{ essential_packages_common + essential_packages_redhat_only }}"
 
-basic_packages_ubuntu: "{{ essential_packages_common + essential_packages_debian_only }}"
+basic_packages_ubuntu: "{{ essential_packages_common + essential_packages_ubuntu_only }}"
 
 set_bash_history_timestamps: true
