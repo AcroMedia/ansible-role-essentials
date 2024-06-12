@@ -21,11 +21,10 @@ essential_packages_common:
   - bc
   - screen
   - jq
-  - mlocate
   - net-tools
+  - "{{ (ansible_distribution_major_version|int < 22) | ternary('mlocate', 'plocate') }}"
 
 basic_packages_redhat: "{{ essential_packages_common + essential_packages_redhat_only }}"
-
 basic_packages_ubuntu: "{{ essential_packages_common + essential_packages_ubuntu_only }}"
 
 set_bash_history_timestamps: true

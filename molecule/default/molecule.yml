@@ -1,4 +1,5 @@
 ---
+role_name_check: 1
 dependency:
   name: galaxy
 driver:
@@ -7,11 +8,20 @@ platforms:
   - name: instance
     image: ${MOLECULE_DOCKER_IMAGE:-'geerlingguy/docker-ubuntu1804-ansible:latest'}
     command: ${MOLECULE_DOCKER_COMMAND:-""}
+    cgroupns_mode: host
     volumes:
-      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
     privileged: true
     pre_build_image: true
+    tmpfs:
+      - /tmp
+      - /run
+      - /run/lock
 provisioner:
   name: ansible
   playbooks:
     converge: ${MOLECULE_PLAYBOOK:-converge.yml}
+  config_options:
+    defaults:
+      verbosity: ${MOLECULE_VERBOSITY:-0}
+      remote_tmp: /tmp
