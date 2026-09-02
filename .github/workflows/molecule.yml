@@ -31,7 +31,6 @@ jobs:
           - geerlingguy/docker-ubuntu2404-ansible:latest
           - geerlingguy/docker-ubuntu2204-ansible:latest
           - geerlingguy/docker-centos8-ansible:latest
-          - geerlingguy/docker-centos7-ansible:latest
     steps:
       - name: checkout
         uses: actions/checkout@v2
