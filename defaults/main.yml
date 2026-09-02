@@ -22,6 +22,7 @@ essential_packages_common:
   - screen
   - jq
   - net-tools
+  - sysstat
   - "{{ (ansible_distribution_major_version|int < 22) | ternary('mlocate', 'plocate') }}"
 
 basic_packages_redhat: "{{ essential_packages_common + essential_packages_redhat_only }}"
